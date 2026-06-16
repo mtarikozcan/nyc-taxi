@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NYC Taksi Talep Tahmini Sistemi - XGBoost modeli ile bölge ve zaman bazlı taksi talebi tahmini">
+    <title>NYC Taksi Talep Tahmini</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <style>
+        /* ============================
+           DESIGN TOKENS
+        ============================ */
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --bg-card: rgba(17, 24, 39, 0.7);
+            --bg-card-hover: rgba(23, 33, 54, 0.8);
+            --bg-glass: rgba(255, 255, 255, 0.03);
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --border-active: rgba(247, 201, 72, 0.4);
+
+            --taxi-yellow: #F7C948;
+            --taxi-yellow-glow: rgba(247, 201, 72, 0.15);
+            --taxi-gold: #D4A843;
+            --taxi-amber: #F59E0B;
+
+            --accent-blue: #3B82F6;
+            --accent-purple: #8B5CF6;
+            --accent-emerald: #10B981;
+            --accent-rose: #F43F5E;
+
+            --text-primary: #F9FAFB;
+            --text-secondary: #9CA3AF;
+            --text-muted: #6B7280;
+            --text-accent: var(--taxi-yellow);
+
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+
+            --shadow-glow: 0 0 40px rgba(247, 201, 72, 0.08);
+            --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.3);
+
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ============================
+           RESET & BASE
+        ============================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* ============================
+           BACKGROUND EFFECTS
+        ============================ */
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-glow-1 {
+            position: fixed;
+            top: -20%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(247,201,72,0.06) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .bg-glow-2 {
+            position: fixed;
+            bottom: -20%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59,130,246,0.05) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            animation: float 25s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -20px) scale(1.05); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+
+        /* ============================
+           LAYOUT
+        ============================ */
+        .app-container {
+            position: relative;
+            z-index: 1;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        /* ============================
+           HEADER
+        ============================ */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .header-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 16px;
+            background: var(--taxi-yellow-glow);
+            border: 1px solid rgba(247,201,72,0.2);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--taxi-yellow);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+
+        .header h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, var(--taxi-yellow) 50%, var(--taxi-gold) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+        }
+
+        .header p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ============================
+           STATS BAR
+        ============================ */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            border-color: var(--border-active);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--taxi-yellow);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-weight: 500;
+        }
+
+        /* ============================
+           MAIN GRID
+        ============================ */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 1.5rem;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+            align-items: stretch;
+        }
+
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================
+           CARD
+        ============================ */
+        .card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            padding: 1.75rem;
+            box-shadow: var(--shadow-card);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            border-color: rgba(255,255,255,0.12);
+        }
+
+        .card-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-title .icon {
+            font-size: 1rem;
+        }
+
+        /* ============================
+           FORM ELEMENTS
+        ============================ */
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-sm);
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 8.5L1 3.5h10z' fill='%239CA3AF'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+        }
+
+        .form-select:focus {
+            outline: none;
+            border-color: var(--taxi-yellow);
+            box-shadow: 0 0 0 3px var(--taxi-yellow-glow);
+        }
+
+        .form-select option {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+
+        /* Slider */
+        .slider-container {
+            position: relative;
+        }
+
+        .slider-value {
+            position: absolute;
+            right: 0;
+            top: -2px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--taxi-yellow);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .form-range {
+            width: 100%;
+            height: 6px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: linear-gradient(to right, var(--taxi-yellow) 0%, var(--taxi-yellow) var(--value-pct, 50%), rgba(255,255,255,0.1) var(--value-pct, 50%), rgba(255,255,255,0.1) 100%);
+            border-radius: 100px;
+            outline: none;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        .form-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--taxi-yellow);
+            box-shadow: 0 0 12px rgba(247,201,72,0.4);
+            cursor: grab;
+            transition: transform 0.2s;
+        }
+
+        .form-range::-webkit-slider-thumb:hover {
+            transform: scale(1.15);
+        }
+
+        .form-range::-moz-range-thumb {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--taxi-yellow);
+            box-shadow: 0 0 12px rgba(247,201,72,0.4);
+            border: none;
+            cursor: grab;
+        }
+
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4px;
+            font-size: 0.65rem;
+            color: var(--text-muted);
+        }
+
+        /* Day Buttons */
+        .day-buttons {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 6px;
+        }
+
+        .day-btn {
+            padding: 10px 4px;
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-sm);
+            background: var(--bg-glass);
+            color: var(--text-secondary);
+            font-family: inherit;
+            font-size: 0.72rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .day-btn:hover {
+            border-color: rgba(247,201,72,0.3);
+            color: var(--text-primary);
+            background: rgba(247,201,72,0.05);
+        }
+
+        .day-btn.active {
+            background: linear-gradient(135deg, var(--taxi-yellow), var(--taxi-gold));
+            color: #000;
+            border-color: var(--taxi-yellow);
+            box-shadow: 0 0 16px rgba(247,201,72,0.2);
+        }
+
+        /* ============================
+           PREDICT BUTTON
+        ============================ */
+        .predict-btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: var(--radius-md);
+            background: linear-gradient(135deg, var(--taxi-yellow), var(--taxi-amber));
+            color: #000;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+
+        .predict-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .predict-btn:hover::before {
+            transform: translateX(100%);
+        }
+
+        .predict-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(247,201,72,0.3);
+        }
+
+        .predict-btn:active {
+            transform: translateY(0);
+        }
+
+        .predict-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .predict-btn.loading {
+            pointer-events: none;
+        }
+
+        /* ============================
+           RESULT SECTION
+        ============================ */
+        .result-section {
+            display: none;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        .result-section.visible {
+            display: block;
+        }
+
+        .result-hero {
+            text-align: center;
+            padding: 2rem 0 1.5rem;
+        }
+
+        .result-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .result-number {
+            font-size: 4.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--taxi-yellow), var(--accent-emerald));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin-bottom: 4px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .result-unit {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .result-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 1.25rem;
+        }
+
+        .result-detail {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-sm);
+            padding: 12px;
+            text-align: center;
+        }
+
+        .result-detail-value {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .result-detail-label {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-top: 2px;
+        }
+
+        /* ============================
+           ERROR MESSAGE
+        ============================ */
+        .error-msg {
+            display: none;
+            padding: 14px 18px;
+            background: rgba(244, 63, 94, 0.1);
+            border: 1px solid rgba(244, 63, 94, 0.3);
+            border-radius: var(--radius-sm);
+            color: var(--accent-rose);
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            animation: shake 0.4s ease-out;
+        }
+
+        .error-msg.visible {
+            display: block;
+        }
+
+        /* ============================
+           MAP SECTION
+        ============================ */
+        .map-card {
+            height: 100%;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+        }
+        
+        #map {
+            flex-grow: 1;
+            border-radius: var(--radius-md);
+            background: #1a1a2e;
+            border: 1px solid var(--border-glass);
+            z-index: 1;
+        }
+        
+        /* Leaflet Dark Theme Overrides */
+        .leaflet-container {
+            background: #111827;
+            font-family: 'Inter', sans-serif;
+        }
+        .leaflet-popup-content-wrapper {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-active);
+            color: var(--text-primary);
+            border-radius: var(--radius-sm);
+        }
+        .leaflet-popup-tip {
+            background: var(--bg-card);
+        }
+        .leaflet-popup-content {
+            margin: 12px;
+            line-height: 1.4;
+        }
+        .map-legend {
+            background: var(--bg-card);
+            backdrop-filter: blur(8px);
+            padding: 10px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-glass);
+            color: var(--text-primary);
+            font-size: 0.75rem;
+            line-height: 18px;
+        }
+        .map-legend i {
+            width: 18px;
+            height: 18px;
+            float: left;
+            margin-right: 8px;
+            opacity: 0.8;
+            border-radius: 2px;
+        }
+
+        /* ============================
+           FOOTER
+        ============================ */
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-glass);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .footer a {
+            color: var(--taxi-yellow);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ============================
+           ANIMATIONS
+        ============================ */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-6px); }
+            75% { transform: translateX(6px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .loading-dots::after {
+            content: '';
+            animation: dots 1.5s infinite;
+        }
+
+        @keyframes dots {
+            0% { content: ''; }
+            25% { content: '.'; }
+            50% { content: '..'; }
+            75% { content: '...'; }
+        }
+
+        /* ============================
+           SCROLLBAR
+        ============================ */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.1);
+            border-radius: 100px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255,255,255,0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-badge">🚕 XGBoost Model · R² = 0.937</div>
+            <h1>NYC Taksi Talep Tahmini</h1>
+            <p>Bölge, saat ve gün seçerek New York City'deki taksi talebini tahmin edin</p>
+        </header>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar" id="statsBar">
+            <div class="stat-card">
+                <div class="stat-value" id="statZones">—</div>
+                <div class="stat-label">Aktif Bölge</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">2.8M+</div>
+                <div class="stat-label">Eğitim Verisi</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">93.7%</div>
+                <div class="stat-label">Doğruluk (R²)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">7</div>
+                <div class="stat-label">Öznitelik</div>
+            </div>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="main-grid">
+            <!-- LEFT: Input & Result -->
+            <div class="left-column">
+                <!-- Input Card -->
+                <div class="card">
+                <div class="card-title"><span class="icon">⚙️</span> Tahmin Parametreleri</div>
+
+                <!-- Zone Selector -->
+                <div class="form-group">
+                    <label class="form-label" for="zoneSelect">Bölge (Pickup Zone)</label>
+                    <select class="form-select" id="zoneSelect">
+                        <option value="">Yükleniyor...</option>
+                    </select>
+                </div>
+
+                <!-- Hour Slider -->
+                <div class="form-group">
+                    <label class="form-label">Saat</label>
+                    <div class="slider-container">
+                        <span class="slider-value" id="hourValue">12:00</span>
+                        <input type="range" class="form-range" id="hourSlider"
+                               min="0" max="23" value="12" step="1">
+                        <div class="slider-labels">
+                            <span>00:00</span>
+                            <span>06:00</span>
+                            <span>12:00</span>
+                            <span>18:00</span>
+                            <span>23:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day Buttons -->
+                <div class="form-group">
+                    <label class="form-label">Gün</label>
+                    <div class="day-buttons" id="dayButtons">
+                        <button class="day-btn" data-day="0">Pzt</button>
+                        <button class="day-btn" data-day="1">Sal</button>
+                        <button class="day-btn active" data-day="2">Çar</button>
+                        <button class="day-btn" data-day="3">Per</button>
+                        <button class="day-btn" data-day="4">Cum</button>
+                        <button class="day-btn" data-day="5">Cmt</button>
+                        <button class="day-btn" data-day="6">Paz</button>
+                    </div>
+                </div>
+
+                <!-- Predict Button -->
+                <button class="predict-btn" id="predictBtn" onclick="predict()">
+                    🔮 Tahmini Hesapla
+                </button>
+
+                <!-- Error Message -->
+                <div class="error-msg" id="errorMsg"></div>
+            </div>
+
+            <!-- RIGHT: Result Card -->
+            <div class="card">
+                <div class="card-title"><span class="icon">📊</span> Tahmin Sonucu</div>
+
+                <!-- Empty State -->
+                <div id="emptyState" style="text-align: center; padding: 3rem 1rem;">
+                    <div style="font-size: 3.5rem; margin-bottom: 1rem; opacity: 0.3;">🚕</div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        Bölge, saat ve gün seçip<br>
+                        <strong style="color: var(--text-secondary);">Tahmini Hesapla</strong> butonuna tıklayın
+                    </p>
+                </div>
+
+                <!-- Result Section -->
+                <div class="result-section" id="resultSection">
+                    <div class="result-hero">
+                        <div class="result-label">Tahmini Trip Sayısı</div>
+                        <div class="result-number" id="resultNumber">0</div>
+                        <div class="result-unit">yolculuk / saat</div>
+                    </div>
+
+                    <div class="result-details">
+                        <div class="result-detail">
+                            <div class="result-detail-value" id="resultZone">—</div>
+                            <div class="result-detail-label">Bölge ID</div>
+                        </div>
+                        <div class="result-detail">
+                            <div class="result-detail-value" id="resultHour">—</div>
+                            <div class="result-detail-label">Saat</div>
+                        </div>
+                        <div class="result-detail">
+                            <div class="result-detail-value" id="resultDay">—</div>
+                            <div class="result-detail-label">Gün</div>
+                        </div>
+                        <div class="result-detail">
+                            <div class="result-detail-value" id="resultModel">—</div>
+                            <div class="result-detail-label">Model</div>
+                        </div>
+                        <div class="result-detail">
+                            <div class="result-detail-value" id="resultR2">—</div>
+                            <div class="result-detail-label">R² Skoru</div>
+                        </div>
+                        <div class="result-detail">
+                            <div class="result-detail-value" id="resultWeekend">—</div>
+                            <div class="result-detail-label">Hafta Sonu</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div> <!-- End of left-column -->
+            
+            <!-- RIGHT: Map Card -->
+            <div class="card map-card">
+                <div class="card-title"><span class="icon">🗺️</span> NYC Taksi Bölgeleri Yoğunluk Haritası</div>
+                <div id="map"></div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Ankara Üniversitesi · Bilgisayar Mühendisliği · 3522 Bulut Bilişim Dersi</p>
+            <p style="margin-top: 4px;">
+                Veri: <a href="https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page" target="_blank">NYC TLC Trip Record Data</a>
+                · Model: XGBoost · Hazırlayan: Mehmet AKALIN
+            </p>
+        </footer>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <script>
+        // ============================================================
+        // STATE
+        // ============================================================
+        let zones = [];
+        let geojsonLayer = null;
+        let map = null;
+        let selectedDay = 2; // Çarşamba (varsayılan)
+
+        const DAY_NAMES = ['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi', 'Pazar'];
+
+        // ============================================================
+        // INITIALIZATION
+        // ============================================================
+        document.addEventListener('DOMContentLoaded', async () => {
+            initMap();
+            await loadZones();
+            setupHourSlider();
+            setupDayButtons();
+            
+            // Map event binding for dropdown
+            document.getElementById('zoneSelect').addEventListener('change', function(e) {
+                const zoneId = parseInt(e.target.value);
+                if (zoneId && geojsonLayer) {
+                    // Find layer by zone id and focus
+                    geojsonLayer.eachLayer(function(layer) {
+                        if (layer.feature.properties.LocationID === zoneId) {
+                            highlightFeature(layer);
+                            map.fitBounds(layer.getBounds());
+                        }
+                    });
+                }
+            });
+        });
+
+        // ============================================================
+        // LOAD ZONES
+        // ============================================================
+        async function loadZones() {
+            const select = document.getElementById('zoneSelect');
+            try {
+                const res = await fetch('/api/zones');
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const data = await res.json();
+                zones = data.zones;
+
+                // Stat güncelle
+                document.getElementById('statZones').textContent = data.total_zones;
+
+                // Dropdown doldur
+                select.innerHTML = '<option value="">Bölge seçin...</option>';
+                zones.forEach(z => {
+                    const opt = document.createElement('option');
+                    opt.value = z.zone_id;
+                    opt.textContent = `Zone ${z.zone_id} — ort. ${z.avg_trips.toFixed(0)} trip/saat`;
+                    select.appendChild(opt);
+                });
+
+                // Varsayılan olarak en yoğun bölgeyi seç
+                if (zones.length > 0) {
+                    select.value = zones[0].zone_id;
+                }
+                
+                // GeoJSON'i yukle
+                await loadGeoJSON();
+                
+            } catch (err) {
+                select.innerHTML = '<option value="">API bağlantısı başarısız</option>';
+                console.error('Zone yükleme hatası:', err);
+            }
+        }
+
+        // ============================================================
+        // HOUR SLIDER
+        // ============================================================
+        function setupHourSlider() {
+            const slider = document.getElementById('hourSlider');
+            const display = document.getElementById('hourValue');
+
+            function updateSlider() {
+                const val = parseInt(slider.value);
+                display.textContent = `${val.toString().padStart(2, '0')}:00`;
+                const pct = (val / 23) * 100;
+                slider.style.setProperty('--value-pct', pct + '%');
+            }
+
+            slider.addEventListener('input', updateSlider);
+            updateSlider();
+        }
+
+        // ============================================================
+        // DAY BUTTONS
+        // ============================================================
+        function setupDayButtons() {
+            const container = document.getElementById('dayButtons');
+            container.querySelectorAll('.day-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    container.querySelectorAll('.day-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    selectedDay = parseInt(btn.dataset.day);
+                });
+            });
+        }
+
+        // ============================================================
+        // MAP FUNCTIONS
+        // ============================================================
+        function initMap() {
+            // Haritayi New York'a odakla
+            map = L.map('map').setView([40.7128, -74.0060], 10);
+            
+            // Koyu tema altlik harita (CartoDB Dark Matter)
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+                subdomains: 'abcd',
+                maxZoom: 20
+            }).addTo(map);
+            
+            // Legend
+            const legend = L.control({position: 'bottomright'});
+            legend.onAdd = function (map) {
+                const div = L.DomUtil.create('div', 'map-legend');
+                const grades = [0, 10, 50, 100, 200];
+                const labels = [];
+                div.innerHTML = '<strong>Ort. Talep/Saat</strong><br>';
+                for (let i = 0; i < grades.length; i++) {
+                    div.innerHTML +=
+                        '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+                        grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+                }
+                return div;
+            };
+            legend.addTo(map);
+        }
+        
+        function getColor(d) {
+            return d > 200 ? '#800026' :
+                   d > 100 ? '#BD0026' :
+                   d > 50  ? '#E31A1C' :
+                   d > 10  ? '#FD8D3C' :
+                   d > 0   ? '#FEB24C' :
+                             '#rgba(255,255,255,0.1)';
+        }
+        
+        function style(feature) {
+            const locId = feature.properties.LocationID;
+            const zoneStat = zones.find(z => z.zone_id === locId);
+            const demand = zoneStat ? zoneStat.avg_trips : 0;
+            
+            return {
+                fillColor: getColor(demand),
+                weight: 1,
+                opacity: 1,
+                color: 'rgba(255,255,255,0.2)',
+                fillOpacity: 0.6
+            };
+        }
+        
+        let lastHighlightedLayer = null;
+        
+        function highlightFeature(layer) {
+            if (lastHighlightedLayer) {
+                geojsonLayer.resetStyle(lastHighlightedLayer);
+            }
+            
+            layer.setStyle({
+                weight: 3,
+                color: '#F7C948',
+                dashArray: '',
+                fillOpacity: 0.9
+            });
+            
+            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                layer.bringToFront();
+            }
+            lastHighlightedLayer = layer;
+        }
+
+        function onEachFeature(feature, layer) {
+            const locId = feature.properties.LocationID;
+            const zoneStat = zones.find(z => z.zone_id === locId);
+            const demand = zoneStat ? zoneStat.avg_trips.toFixed(1) : 'Bilinmiyor';
+            
+            layer.bindPopup(`
+                <div style="font-size:14px; margin-bottom:4px;">
+                    <strong style="color:var(--taxi-yellow)">Zone ${locId}</strong><br/>
+                    ${feature.properties.zone}<br/>
+                    <span style="color:var(--text-muted); font-size:11px;">Borough: ${feature.properties.borough}</span>
+                </div>
+                <div style="font-size:12px; margin-top:6px; border-top:1px solid rgba(255,255,255,0.1); padding-top:6px;">
+                    Ortalama Talep: <strong>${demand}</strong> / saat
+                </div>
+            `);
+            
+            layer.on({
+                click: function(e) {
+                    highlightFeature(e.target);
+                    // Formu guncelle
+                    const select = document.getElementById('zoneSelect');
+                    if(Array.from(select.options).some(o => parseInt(o.value) === locId)) {
+                        select.value = locId;
+                    }
+                }
+            });
+        }
+        
+        async function loadGeoJSON() {
+            try {
+                const res = await fetch('nyc_taxi_zones.geojson');
+                if(!res.ok) throw new Error("GeoJSON yuklenemedi");
+                const data = await res.json();
+                
+                geojsonLayer = L.geoJSON(data, {
+                    style: style,
+                    onEachFeature: onEachFeature
+                }).addTo(map);
+                
+                // Secili zone'u haritada da goster
+                const select = document.getElementById('zoneSelect');
+                if(select.value) {
+                    select.dispatchEvent(new Event('change'));
+                }
+                
+            } catch(e) {
+                console.warn("Harita datasi yuklenemedi:", e);
+            }
+        }
+
+        // ============================================================
+        // PREDICT
+        // ============================================================
+        async function predict() {
+            const zoneId = parseInt(document.getElementById('zoneSelect').value);
+            const hour = parseInt(document.getElementById('hourSlider').value);
+            const btn = document.getElementById('predictBtn');
+            const errorMsg = document.getElementById('errorMsg');
+            const resultSection = document.getElementById('resultSection');
+            const emptyState = document.getElementById('emptyState');
+
+            // Validation
+            if (!zoneId) {
+                showError('Lütfen bir bölge seçin.');
+                return;
+            }
+
+            // Loading state
+            hideError();
+            btn.disabled = true;
+            btn.classList.add('loading');
+            btn.innerHTML = '⏳ Hesaplanıyor<span class="loading-dots"></span>';
+
+            try {
+                const res = await fetch('/api/predict', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        zone_id: zoneId,
+                        hour: hour,
+                        day_of_week: selectedDay
+                    })
+                });
+
+                if (!res.ok) {
+                    const err = await res.json();
+                    throw new Error(err.detail || `HTTP ${res.status}`);
+                }
+
+                const data = await res.json();
+
+                // Show result
+                emptyState.style.display = 'none';
+                resultSection.classList.add('visible');
+
+                // Animate number
+                animateNumber(document.getElementById('resultNumber'), data.predicted_trips);
+
+                // Details
+                document.getElementById('resultZone').textContent = `Zone ${data.zone_id}`;
+                document.getElementById('resultHour').textContent = `${data.hour.toString().padStart(2, '0')}:00`;
+                document.getElementById('resultDay').textContent = DAY_NAMES[data.day_of_week];
+                document.getElementById('resultModel').textContent = data.model;
+                document.getElementById('resultR2').textContent = data.r2_score.toFixed(3);
+                document.getElementById('resultWeekend').textContent = data.is_weekend ? 'Evet' : 'Hayır';
+                
+                // Eger harita varsa, tahmini popup'ta goster
+                if(geojsonLayer) {
+                    geojsonLayer.eachLayer(layer => {
+                        if(layer.feature.properties.LocationID === zoneId) {
+                            layer.bindPopup(`
+                                <div style="font-size:14px; margin-bottom:4px;">
+                                    <strong style="color:var(--taxi-yellow)">Zone ${zoneId}</strong><br/>
+                                    ${layer.feature.properties.zone}
+                                </div>
+                                <div style="font-size:13px; margin-top:6px; border-top:1px solid rgba(255,255,255,0.1); padding-top:6px;">
+                                    <strong style="color:var(--accent-emerald); font-size:16px;">${data.predicted_trips}</strong>
+                                    <span style="color:var(--text-muted)">tahmini taksi</span>
+                                </div>
+                            `).openPopup();
+                            map.fitBounds(layer.getBounds(), {padding: [50, 50]});
+                        }
+                    });
+                }
+
+            } catch (err) {
+                showError(err.message);
+            } finally {
+                btn.disabled = false;
+                btn.classList.remove('loading');
+                btn.innerHTML = '🔮 Tahmini Hesapla';
+            }
+        }
+
+        // ============================================================
+        // UTILITIES
+        // ============================================================
+        function animateNumber(el, target) {
+            const duration = 800;
+            const start = performance.now();
+            const from = parseInt(el.textContent) || 0;
+
+            function tick(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                // Ease out cubic
+                const ease = 1 - Math.pow(1 - progress, 3);
+                const current = Math.round(from + (target - from) * ease);
+                el.textContent = current.toLocaleString('tr-TR');
+                if (progress < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        }
+
+        function showError(msg) {
+            const el = document.getElementById('errorMsg');
+            el.textContent = '⚠️ ' + msg;
+            el.classList.add('visible');
+        }
+
+        function hideError() {
+            document.getElementById('errorMsg').classList.remove('visible');
+        }
+    </script>
+</body>
+</html>
