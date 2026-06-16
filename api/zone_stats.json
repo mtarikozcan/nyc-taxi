@@ -1,0 +1,2018 @@
+{
+  "1": {
+    "zone_id": 1,
+    "avg_distance": 6.1424,
+    "avg_fare": 96.942,
+    "avg_passengers": 1.6452,
+    "avg_trips": 1.18,
+    "total_trips": 73
+  },
+  "2": {
+    "zone_id": 2,
+    "avg_distance": 6.56,
+    "avg_fare": 27.5,
+    "avg_passengers": 2.0,
+    "avg_trips": 1.0,
+    "total_trips": 1
+  },
+  "3": {
+    "zone_id": 3,
+    "avg_distance": 6.1172,
+    "avg_fare": 30.106,
+    "avg_passengers": 1.04,
+    "avg_trips": 1.08,
+    "total_trips": 27
+  },
+  "4": {
+    "zone_id": 4,
+    "avg_distance": 2.7862,
+    "avg_fare": 16.2738,
+    "avg_passengers": 1.3541,
+    "avg_trips": 5.46,
+    "total_trips": 2954
+  },
+  "5": {
+    "zone_id": 5,
+    "avg_distance": 19.2264,
+    "avg_fare": 64.2566,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.0,
+    "total_trips": 53
+  },
+  "6": {
+    "zone_id": 6,
+    "avg_distance": 1.5016,
+    "avg_fare": 9.2698,
+    "avg_passengers": 1.7442,
+    "avg_trips": 1.0,
+    "total_trips": 43
+  },
+  "7": {
+    "zone_id": 7,
+    "avg_distance": 3.2318,
+    "avg_fare": 17.7549,
+    "avg_passengers": 1.2717,
+    "avg_trips": 2.08,
+    "total_trips": 1121
+  },
+  "8": {
+    "zone_id": 8,
+    "avg_distance": 6.422,
+    "avg_fare": 56.29,
+    "avg_passengers": 1.2,
+    "avg_trips": 1.0,
+    "total_trips": 10
+  },
+  "9": {
+    "zone_id": 9,
+    "avg_distance": 5.5249,
+    "avg_fare": 29.2373,
+    "avg_passengers": 1.04,
+    "avg_trips": 1.12,
+    "total_trips": 28
+  },
+  "10": {
+    "zone_id": 10,
+    "avg_distance": 14.073,
+    "avg_fare": 66.0561,
+    "avg_passengers": 1.4057,
+    "avg_trips": 2.54,
+    "total_trips": 1218
+  },
+  "11": {
+    "zone_id": 11,
+    "avg_distance": 11.4466,
+    "avg_fare": 41.7971,
+    "avg_passengers": 1.2857,
+    "avg_trips": 1.0,
+    "total_trips": 35
+  },
+  "12": {
+    "zone_id": 12,
+    "avg_distance": 4.5506,
+    "avg_fare": 23.1718,
+    "avg_passengers": 1.6429,
+    "avg_trips": 2.49,
+    "total_trips": 728
+  },
+  "13": {
+    "zone_id": 13,
+    "avg_distance": 4.9891,
+    "avg_fare": 23.7626,
+    "avg_passengers": 1.4249,
+    "avg_trips": 23.63,
+    "total_trips": 14748
+  },
+  "14": {
+    "zone_id": 14,
+    "avg_distance": 10.8056,
+    "avg_fare": 42.5309,
+    "avg_passengers": 1.0963,
+    "avg_trips": 1.13,
+    "total_trips": 153
+  },
+  "15": {
+    "zone_id": 15,
+    "avg_distance": 10.9955,
+    "avg_fare": 34.43,
+    "avg_passengers": 1.05,
+    "avg_trips": 1.05,
+    "total_trips": 21
+  },
+  "16": {
+    "zone_id": 16,
+    "avg_distance": 8.4315,
+    "avg_fare": 35.0962,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.0,
+    "total_trips": 26
+  },
+  "17": {
+    "zone_id": 17,
+    "avg_distance": 3.5669,
+    "avg_fare": 20.857,
+    "avg_passengers": 1.1197,
+    "avg_trips": 1.18,
+    "total_trips": 195
+  },
+  "18": {
+    "zone_id": 18,
+    "avg_distance": 8.305,
+    "avg_fare": 33.0355,
+    "avg_passengers": 1.0645,
+    "avg_trips": 1.08,
+    "total_trips": 67
+  },
+  "19": {
+    "zone_id": 19,
+    "avg_distance": 7.4241,
+    "avg_fare": 32.4843,
+    "avg_passengers": 1.1373,
+    "avg_trips": 1.02,
+    "total_trips": 52
+  },
+  "20": {
+    "zone_id": 20,
+    "avg_distance": 5.2639,
+    "avg_fare": 30.9607,
+    "avg_passengers": 1.2143,
+    "avg_trips": 1.04,
+    "total_trips": 29
+  },
+  "21": {
+    "zone_id": 21,
+    "avg_distance": 7.3996,
+    "avg_fare": 32.507,
+    "avg_passengers": 1.0702,
+    "avg_trips": 1.07,
+    "total_trips": 61
+  },
+  "22": {
+    "zone_id": 22,
+    "avg_distance": 9.0388,
+    "avg_fare": 48.3707,
+    "avg_passengers": 1.0714,
+    "avg_trips": 1.1,
+    "total_trips": 46
+  },
+  "23": {
+    "zone_id": 23,
+    "avg_distance": 18.2547,
+    "avg_fare": 56.8882,
+    "avg_passengers": 1.0395,
+    "avg_trips": 1.01,
+    "total_trips": 77
+  },
+  "24": {
+    "zone_id": 24,
+    "avg_distance": 2.7371,
+    "avg_fare": 15.6215,
+    "avg_passengers": 1.3557,
+    "avg_trips": 11.6,
+    "total_trips": 7793
+  },
+  "25": {
+    "zone_id": 25,
+    "avg_distance": 4.2935,
+    "avg_fare": 21.9842,
+    "avg_passengers": 1.2672,
+    "avg_trips": 1.98,
+    "total_trips": 845
+  },
+  "26": {
+    "zone_id": 26,
+    "avg_distance": 7.6313,
+    "avg_fare": 33.3013,
+    "avg_passengers": 1.2116,
+    "avg_trips": 1.11,
+    "total_trips": 70
+  },
+  "28": {
+    "zone_id": 28,
+    "avg_distance": 9.7657,
+    "avg_fare": 53.4972,
+    "avg_passengers": 1.2141,
+    "avg_trips": 1.52,
+    "total_trips": 481
+  },
+  "29": {
+    "zone_id": 29,
+    "avg_distance": 16.8603,
+    "avg_fare": 62.3997,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.1,
+    "total_trips": 53
+  },
+  "30": {
+    "zone_id": 30,
+    "avg_distance": 2.94,
+    "avg_fare": 14.9,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.0,
+    "total_trips": 2
+  },
+  "31": {
+    "zone_id": 31,
+    "avg_distance": 6.3471,
+    "avg_fare": 39.7286,
+    "avg_passengers": 1.4286,
+    "avg_trips": 1.0,
+    "total_trips": 7
+  },
+  "32": {
+    "zone_id": 32,
+    "avg_distance": 5.794,
+    "avg_fare": 29.4425,
+    "avg_passengers": 1.0333,
+    "avg_trips": 1.08,
+    "total_trips": 65
+  },
+  "33": {
+    "zone_id": 33,
+    "avg_distance": 4.6407,
+    "avg_fare": 23.7585,
+    "avg_passengers": 1.3336,
+    "avg_trips": 2.18,
+    "total_trips": 967
+  },
+  "34": {
+    "zone_id": 34,
+    "avg_distance": 5.0532,
+    "avg_fare": 25.836,
+    "avg_passengers": 1.58,
+    "avg_trips": 1.04,
+    "total_trips": 26
+  },
+  "35": {
+    "zone_id": 35,
+    "avg_distance": 5.7702,
+    "avg_fare": 28.3322,
+    "avg_passengers": 1.0346,
+    "avg_trips": 1.17,
+    "total_trips": 152
+  },
+  "36": {
+    "zone_id": 36,
+    "avg_distance": 4.6627,
+    "avg_fare": 25.2241,
+    "avg_passengers": 1.2846,
+    "avg_trips": 1.34,
+    "total_trips": 103
+  },
+  "37": {
+    "zone_id": 37,
+    "avg_distance": 4.4306,
+    "avg_fare": 23.8057,
+    "avg_passengers": 1.3239,
+    "avg_trips": 1.31,
+    "total_trips": 162
+  },
+  "38": {
+    "zone_id": 38,
+    "avg_distance": 9.0522,
+    "avg_fare": 41.4705,
+    "avg_passengers": 1.0641,
+    "avg_trips": 1.05,
+    "total_trips": 82
+  },
+  "39": {
+    "zone_id": 39,
+    "avg_distance": 10.8777,
+    "avg_fare": 41.3614,
+    "avg_passengers": 1.1104,
+    "avg_trips": 1.37,
+    "total_trips": 345
+  },
+  "40": {
+    "zone_id": 40,
+    "avg_distance": 3.4696,
+    "avg_fare": 18.7798,
+    "avg_passengers": 1.2598,
+    "avg_trips": 1.55,
+    "total_trips": 312
+  },
+  "41": {
+    "zone_id": 41,
+    "avg_distance": 2.5335,
+    "avg_fare": 14.9768,
+    "avg_passengers": 1.3767,
+    "avg_trips": 9.01,
+    "total_trips": 6164
+  },
+  "42": {
+    "zone_id": 42,
+    "avg_distance": 2.612,
+    "avg_fare": 15.3424,
+    "avg_passengers": 1.274,
+    "avg_trips": 3.56,
+    "total_trips": 2185
+  },
+  "43": {
+    "zone_id": 43,
+    "avg_distance": 2.7019,
+    "avg_fare": 15.5661,
+    "avg_passengers": 1.4364,
+    "avg_trips": 68.24,
+    "total_trips": 47358
+  },
+  "44": {
+    "zone_id": 44,
+    "avg_distance": 20.0003,
+    "avg_fare": 56.7759,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.1,
+    "total_trips": 32
+  },
+  "45": {
+    "zone_id": 45,
+    "avg_distance": 3.9341,
+    "avg_fare": 21.3107,
+    "avg_passengers": 1.5049,
+    "avg_trips": 5.89,
+    "total_trips": 3506
+  },
+  "46": {
+    "zone_id": 46,
+    "avg_distance": 10.6,
+    "avg_fare": 35.4,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.0,
+    "total_trips": 3
+  },
+  "47": {
+    "zone_id": 47,
+    "avg_distance": 5.3484,
+    "avg_fare": 26.8681,
+    "avg_passengers": 1.0213,
+    "avg_trips": 1.11,
+    "total_trips": 52
+  },
+  "48": {
+    "zone_id": 48,
+    "avg_distance": 2.7435,
+    "avg_fare": 15.7071,
+    "avg_passengers": 1.4163,
+    "avg_trips": 106.23,
+    "total_trips": 79035
+  },
+  "49": {
+    "zone_id": 49,
+    "avg_distance": 3.4263,
+    "avg_fare": 19.7907,
+    "avg_passengers": 1.1795,
+    "avg_trips": 1.27,
+    "total_trips": 231
+  },
+  "50": {
+    "zone_id": 50,
+    "avg_distance": 2.7408,
+    "avg_fare": 15.4673,
+    "avg_passengers": 1.3765,
+    "avg_trips": 22.96,
+    "total_trips": 16735
+  },
+  "51": {
+    "zone_id": 51,
+    "avg_distance": 9.7134,
+    "avg_fare": 39.0432,
+    "avg_passengers": 1.0071,
+    "avg_trips": 1.36,
+    "total_trips": 190
+  },
+  "52": {
+    "zone_id": 52,
+    "avg_distance": 4.0772,
+    "avg_fare": 22.0789,
+    "avg_passengers": 1.241,
+    "avg_trips": 1.78,
+    "total_trips": 506
+  },
+  "53": {
+    "zone_id": 53,
+    "avg_distance": 9.3792,
+    "avg_fare": 39.3045,
+    "avg_passengers": 1.0455,
+    "avg_trips": 1.06,
+    "total_trips": 35
+  },
+  "54": {
+    "zone_id": 54,
+    "avg_distance": 7.0889,
+    "avg_fare": 29.1447,
+    "avg_passengers": 1.4211,
+    "avg_trips": 1.0,
+    "total_trips": 19
+  },
+  "55": {
+    "zone_id": 55,
+    "avg_distance": 13.6711,
+    "avg_fare": 46.7487,
+    "avg_passengers": 1.0194,
+    "avg_trips": 1.19,
+    "total_trips": 123
+  },
+  "56": {
+    "zone_id": 56,
+    "avg_distance": 7.4349,
+    "avg_fare": 50.8522,
+    "avg_passengers": 1.2297,
+    "avg_trips": 1.27,
+    "total_trips": 266
+  },
+  "57": {
+    "zone_id": 57,
+    "avg_distance": 4.965,
+    "avg_fare": 24.875,
+    "avg_passengers": 1.25,
+    "avg_trips": 1.0,
+    "total_trips": 4
+  },
+  "60": {
+    "zone_id": 60,
+    "avg_distance": 5.9553,
+    "avg_fare": 27.3172,
+    "avg_passengers": 1.2188,
+    "avg_trips": 1.06,
+    "total_trips": 34
+  },
+  "61": {
+    "zone_id": 61,
+    "avg_distance": 4.049,
+    "avg_fare": 23.7976,
+    "avg_passengers": 1.1224,
+    "avg_trips": 1.39,
+    "total_trips": 327
+  },
+  "62": {
+    "zone_id": 62,
+    "avg_distance": 3.9701,
+    "avg_fare": 20.8233,
+    "avg_passengers": 1.2192,
+    "avg_trips": 1.04,
+    "total_trips": 76
+  },
+  "63": {
+    "zone_id": 63,
+    "avg_distance": 5.5497,
+    "avg_fare": 28.3452,
+    "avg_passengers": 1.2366,
+    "avg_trips": 1.11,
+    "total_trips": 138
+  },
+  "64": {
+    "zone_id": 64,
+    "avg_distance": 7.7827,
+    "avg_fare": 41.0333,
+    "avg_passengers": 1.2,
+    "avg_trips": 1.0,
+    "total_trips": 15
+  },
+  "65": {
+    "zone_id": 65,
+    "avg_distance": 4.9227,
+    "avg_fare": 24.0419,
+    "avg_passengers": 1.3811,
+    "avg_trips": 2.53,
+    "total_trips": 1322
+  },
+  "66": {
+    "zone_id": 66,
+    "avg_distance": 4.9002,
+    "avg_fare": 25.512,
+    "avg_passengers": 1.5378,
+    "avg_trips": 1.59,
+    "total_trips": 442
+  },
+  "67": {
+    "zone_id": 67,
+    "avg_distance": 8.0385,
+    "avg_fare": 32.3485,
+    "avg_passengers": 1.0303,
+    "avg_trips": 1.15,
+    "total_trips": 38
+  },
+  "68": {
+    "zone_id": 68,
+    "avg_distance": 2.7085,
+    "avg_fare": 16.1019,
+    "avg_passengers": 1.4217,
+    "avg_trips": 95.72,
+    "total_trips": 71212
+  },
+  "69": {
+    "zone_id": 69,
+    "avg_distance": 4.9933,
+    "avg_fare": 25.0913,
+    "avg_passengers": 1.1173,
+    "avg_trips": 1.11,
+    "total_trips": 109
+  },
+  "70": {
+    "zone_id": 70,
+    "avg_distance": 9.5587,
+    "avg_fare": 40.8795,
+    "avg_passengers": 1.4462,
+    "avg_trips": 20.35,
+    "total_trips": 12533
+  },
+  "71": {
+    "zone_id": 71,
+    "avg_distance": 4.9228,
+    "avg_fare": 26.9066,
+    "avg_passengers": 1.069,
+    "avg_trips": 1.1,
+    "total_trips": 96
+  },
+  "72": {
+    "zone_id": 72,
+    "avg_distance": 5.0415,
+    "avg_fare": 27.8129,
+    "avg_passengers": 1.0474,
+    "avg_trips": 1.2,
+    "total_trips": 139
+  },
+  "73": {
+    "zone_id": 73,
+    "avg_distance": 6.5407,
+    "avg_fare": 32.3357,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.0,
+    "total_trips": 14
+  },
+  "74": {
+    "zone_id": 74,
+    "avg_distance": 2.5923,
+    "avg_fare": 14.8777,
+    "avg_passengers": 1.317,
+    "avg_trips": 8.03,
+    "total_trips": 5555
+  },
+  "75": {
+    "zone_id": 75,
+    "avg_distance": 2.6083,
+    "avg_fare": 14.5744,
+    "avg_passengers": 1.3389,
+    "avg_trips": 24.37,
+    "total_trips": 17569
+  },
+  "76": {
+    "zone_id": 76,
+    "avg_distance": 5.3295,
+    "avg_fare": 27.6433,
+    "avg_passengers": 1.0877,
+    "avg_trips": 1.46,
+    "total_trips": 391
+  },
+  "77": {
+    "zone_id": 77,
+    "avg_distance": 6.4135,
+    "avg_fare": 31.6176,
+    "avg_passengers": 1.1373,
+    "avg_trips": 1.04,
+    "total_trips": 53
+  },
+  "78": {
+    "zone_id": 78,
+    "avg_distance": 7.3934,
+    "avg_fare": 29.6291,
+    "avg_passengers": 1.0089,
+    "avg_trips": 1.13,
+    "total_trips": 85
+  },
+  "79": {
+    "zone_id": 79,
+    "avg_distance": 2.7434,
+    "avg_fare": 15.5818,
+    "avg_passengers": 1.3619,
+    "avg_trips": 98.44,
+    "total_trips": 73241
+  },
+  "80": {
+    "zone_id": 80,
+    "avg_distance": 4.9866,
+    "avg_fare": 31.1489,
+    "avg_passengers": 1.425,
+    "avg_trips": 1.7,
+    "total_trips": 337
+  },
+  "81": {
+    "zone_id": 81,
+    "avg_distance": 7.6802,
+    "avg_fare": 31.6279,
+    "avg_passengers": 1.0164,
+    "avg_trips": 1.05,
+    "total_trips": 64
+  },
+  "82": {
+    "zone_id": 82,
+    "avg_distance": 5.4972,
+    "avg_fare": 41.3728,
+    "avg_passengers": 1.3315,
+    "avg_trips": 1.3,
+    "total_trips": 364
+  },
+  "83": {
+    "zone_id": 83,
+    "avg_distance": 4.4013,
+    "avg_fare": 26.1121,
+    "avg_passengers": 1.4886,
+    "avg_trips": 1.14,
+    "total_trips": 100
+  },
+  "85": {
+    "zone_id": 85,
+    "avg_distance": 5.2902,
+    "avg_fare": 26.2344,
+    "avg_passengers": 1.0417,
+    "avg_trips": 1.04,
+    "total_trips": 50
+  },
+  "86": {
+    "zone_id": 86,
+    "avg_distance": 13.8475,
+    "avg_fare": 48.609,
+    "avg_passengers": 1.0471,
+    "avg_trips": 1.19,
+    "total_trips": 101
+  },
+  "87": {
+    "zone_id": 87,
+    "avg_distance": 5.2173,
+    "avg_fare": 24.8262,
+    "avg_passengers": 1.3987,
+    "avg_trips": 18.09,
+    "total_trips": 12877
+  },
+  "88": {
+    "zone_id": 88,
+    "avg_distance": 4.923,
+    "avg_fare": 23.836,
+    "avg_passengers": 1.4214,
+    "avg_trips": 9.82,
+    "total_trips": 6322
+  },
+  "89": {
+    "zone_id": 89,
+    "avg_distance": 5.3013,
+    "avg_fare": 28.7822,
+    "avg_passengers": 1.0524,
+    "avg_trips": 1.22,
+    "total_trips": 194
+  },
+  "90": {
+    "zone_id": 90,
+    "avg_distance": 2.6541,
+    "avg_fare": 15.3674,
+    "avg_passengers": 1.3612,
+    "avg_trips": 62.26,
+    "total_trips": 46319
+  },
+  "91": {
+    "zone_id": 91,
+    "avg_distance": 6.2242,
+    "avg_fare": 32.4774,
+    "avg_passengers": 1.0388,
+    "avg_trips": 1.22,
+    "total_trips": 157
+  },
+  "92": {
+    "zone_id": 92,
+    "avg_distance": 7.8185,
+    "avg_fare": 34.0431,
+    "avg_passengers": 1.0792,
+    "avg_trips": 1.04,
+    "total_trips": 105
+  },
+  "93": {
+    "zone_id": 93,
+    "avg_distance": 9.4128,
+    "avg_fare": 59.4405,
+    "avg_passengers": 1.382,
+    "avg_trips": 2.99,
+    "total_trips": 1546
+  },
+  "94": {
+    "zone_id": 94,
+    "avg_distance": 6.0323,
+    "avg_fare": 28.2203,
+    "avg_passengers": 1.0676,
+    "avg_trips": 1.08,
+    "total_trips": 40
+  },
+  "95": {
+    "zone_id": 95,
+    "avg_distance": 4.1479,
+    "avg_fare": 23.0246,
+    "avg_passengers": 1.1582,
+    "avg_trips": 1.42,
+    "total_trips": 372
+  },
+  "96": {
+    "zone_id": 96,
+    "avg_distance": 3.2078,
+    "avg_fare": 18.6562,
+    "avg_passengers": 1.1875,
+    "avg_trips": 1.06,
+    "total_trips": 17
+  },
+  "97": {
+    "zone_id": 97,
+    "avg_distance": 3.8217,
+    "avg_fare": 20.7013,
+    "avg_passengers": 1.3051,
+    "avg_trips": 1.82,
+    "total_trips": 744
+  },
+  "98": {
+    "zone_id": 98,
+    "avg_distance": 8.4839,
+    "avg_fare": 44.9217,
+    "avg_passengers": 1.0435,
+    "avg_trips": 1.04,
+    "total_trips": 24
+  },
+  "99": {
+    "zone_id": 99,
+    "avg_distance": 0.03,
+    "avg_fare": 3.0,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.0,
+    "total_trips": 1
+  },
+  "100": {
+    "zone_id": 100,
+    "avg_distance": 2.8426,
+    "avg_fare": 16.7244,
+    "avg_passengers": 1.4055,
+    "avg_trips": 63.0,
+    "total_trips": 46875
+  },
+  "101": {
+    "zone_id": 101,
+    "avg_distance": 9.5983,
+    "avg_fare": 42.24,
+    "avg_passengers": 1.1429,
+    "avg_trips": 1.09,
+    "total_trips": 38
+  },
+  "102": {
+    "zone_id": 102,
+    "avg_distance": 3.9078,
+    "avg_fare": 24.8608,
+    "avg_passengers": 1.2162,
+    "avg_trips": 1.08,
+    "total_trips": 40
+  },
+  "106": {
+    "zone_id": 106,
+    "avg_distance": 4.7223,
+    "avg_fare": 23.1451,
+    "avg_passengers": 1.0882,
+    "avg_trips": 1.12,
+    "total_trips": 57
+  },
+  "107": {
+    "zone_id": 107,
+    "avg_distance": 2.5349,
+    "avg_fare": 14.6949,
+    "avg_passengers": 1.3366,
+    "avg_trips": 86.86,
+    "total_trips": 64624
+  },
+  "108": {
+    "zone_id": 108,
+    "avg_distance": 14.7076,
+    "avg_fare": 48.5293,
+    "avg_passengers": 1.0517,
+    "avg_trips": 1.03,
+    "total_trips": 60
+  },
+  "109": {
+    "zone_id": 109,
+    "avg_distance": 17.5,
+    "avg_fare": 47.2,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.0,
+    "total_trips": 1
+  },
+  "111": {
+    "zone_id": 111,
+    "avg_distance": 10.44,
+    "avg_fare": 41.85,
+    "avg_passengers": 2.0,
+    "avg_trips": 1.0,
+    "total_trips": 2
+  },
+  "112": {
+    "zone_id": 112,
+    "avg_distance": 3.7659,
+    "avg_fare": 21.1919,
+    "avg_passengers": 1.2788,
+    "avg_trips": 1.96,
+    "total_trips": 359
+  },
+  "113": {
+    "zone_id": 113,
+    "avg_distance": 2.6529,
+    "avg_fare": 15.4935,
+    "avg_passengers": 1.3321,
+    "avg_trips": 51.92,
+    "total_trips": 37955
+  },
+  "114": {
+    "zone_id": 114,
+    "avg_distance": 2.6882,
+    "avg_fare": 15.6668,
+    "avg_passengers": 1.3908,
+    "avg_trips": 51.18,
+    "total_trips": 37513
+  },
+  "116": {
+    "zone_id": 116,
+    "avg_distance": 3.3658,
+    "avg_fare": 18.2409,
+    "avg_passengers": 1.3571,
+    "avg_trips": 3.12,
+    "total_trips": 1864
+  },
+  "117": {
+    "zone_id": 117,
+    "avg_distance": 14.8952,
+    "avg_fare": 52.9079,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.16,
+    "total_trips": 73
+  },
+  "118": {
+    "zone_id": 118,
+    "avg_distance": 16.139,
+    "avg_fare": 54.98,
+    "avg_passengers": 1.4,
+    "avg_trips": 1.0,
+    "total_trips": 10
+  },
+  "119": {
+    "zone_id": 119,
+    "avg_distance": 5.1552,
+    "avg_fare": 26.6074,
+    "avg_passengers": 1.3162,
+    "avg_trips": 1.06,
+    "total_trips": 72
+  },
+  "120": {
+    "zone_id": 120,
+    "avg_distance": 4.338,
+    "avg_fare": 32.61,
+    "avg_passengers": 1.2,
+    "avg_trips": 1.1,
+    "total_trips": 11
+  },
+  "121": {
+    "zone_id": 121,
+    "avg_distance": 5.3733,
+    "avg_fare": 26.8497,
+    "avg_passengers": 1.0294,
+    "avg_trips": 1.19,
+    "total_trips": 81
+  },
+  "122": {
+    "zone_id": 122,
+    "avg_distance": 6.7563,
+    "avg_fare": 32.0,
+    "avg_passengers": 1.0323,
+    "avg_trips": 1.1,
+    "total_trips": 34
+  },
+  "123": {
+    "zone_id": 123,
+    "avg_distance": 7.0361,
+    "avg_fare": 30.3188,
+    "avg_passengers": 1.1538,
+    "avg_trips": 1.1,
+    "total_trips": 43
+  },
+  "124": {
+    "zone_id": 124,
+    "avg_distance": 10.563,
+    "avg_fare": 56.5354,
+    "avg_passengers": 1.2964,
+    "avg_trips": 1.2,
+    "total_trips": 168
+  },
+  "125": {
+    "zone_id": 125,
+    "avg_distance": 3.0395,
+    "avg_fare": 16.9232,
+    "avg_passengers": 1.3868,
+    "avg_trips": 18.43,
+    "total_trips": 13141
+  },
+  "126": {
+    "zone_id": 126,
+    "avg_distance": 6.0978,
+    "avg_fare": 28.1073,
+    "avg_passengers": 1.1463,
+    "avg_trips": 1.05,
+    "total_trips": 43
+  },
+  "127": {
+    "zone_id": 127,
+    "avg_distance": 6.3922,
+    "avg_fare": 29.1312,
+    "avg_passengers": 1.3073,
+    "avg_trips": 1.06,
+    "total_trips": 116
+  },
+  "128": {
+    "zone_id": 128,
+    "avg_distance": 7.811,
+    "avg_fare": 29.855,
+    "avg_passengers": 1.2,
+    "avg_trips": 1.1,
+    "total_trips": 11
+  },
+  "129": {
+    "zone_id": 129,
+    "avg_distance": 3.9956,
+    "avg_fare": 25.5127,
+    "avg_passengers": 1.3721,
+    "avg_trips": 1.39,
+    "total_trips": 417
+  },
+  "130": {
+    "zone_id": 130,
+    "avg_distance": 10.8733,
+    "avg_fare": 55.3682,
+    "avg_passengers": 1.2827,
+    "avg_trips": 1.81,
+    "total_trips": 770
+  },
+  "131": {
+    "zone_id": 131,
+    "avg_distance": 6.8703,
+    "avg_fare": 30.0706,
+    "avg_passengers": 1.0563,
+    "avg_trips": 1.19,
+    "total_trips": 92
+  },
+  "132": {
+    "zone_id": 132,
+    "avg_distance": 14.9779,
+    "avg_fare": 58.8958,
+    "avg_passengers": 1.4378,
+    "avg_trips": 204.43,
+    "total_trips": 152099
+  },
+  "133": {
+    "zone_id": 133,
+    "avg_distance": 6.5114,
+    "avg_fare": 31.9239,
+    "avg_passengers": 1.3409,
+    "avg_trips": 1.02,
+    "total_trips": 45
+  },
+  "134": {
+    "zone_id": 134,
+    "avg_distance": 6.7955,
+    "avg_fare": 49.0543,
+    "avg_passengers": 1.3077,
+    "avg_trips": 1.22,
+    "total_trips": 254
+  },
+  "135": {
+    "zone_id": 135,
+    "avg_distance": 5.6094,
+    "avg_fare": 26.1985,
+    "avg_passengers": 1.0918,
+    "avg_trips": 1.18,
+    "total_trips": 116
+  },
+  "136": {
+    "zone_id": 136,
+    "avg_distance": 8.5877,
+    "avg_fare": 33.3526,
+    "avg_passengers": 1.0704,
+    "avg_trips": 1.08,
+    "total_trips": 77
+  },
+  "137": {
+    "zone_id": 137,
+    "avg_distance": 2.5097,
+    "avg_fare": 14.2396,
+    "avg_passengers": 1.3333,
+    "avg_trips": 46.94,
+    "total_trips": 34645
+  },
+  "138": {
+    "zone_id": 138,
+    "avg_distance": 9.5175,
+    "avg_fare": 41.075,
+    "avg_passengers": 1.3394,
+    "avg_trips": 129.86,
+    "total_trips": 86746
+  },
+  "139": {
+    "zone_id": 139,
+    "avg_distance": 10.3691,
+    "avg_fare": 44.3497,
+    "avg_passengers": 1.0645,
+    "avg_trips": 1.08,
+    "total_trips": 67
+  },
+  "140": {
+    "zone_id": 140,
+    "avg_distance": 2.7669,
+    "avg_fare": 15.3319,
+    "avg_passengers": 1.3421,
+    "avg_trips": 84.54,
+    "total_trips": 62901
+  },
+  "141": {
+    "zone_id": 141,
+    "avg_distance": 2.3272,
+    "avg_fare": 13.457,
+    "avg_passengers": 1.3593,
+    "avg_trips": 102.87,
+    "total_trips": 76535
+  },
+  "142": {
+    "zone_id": 142,
+    "avg_distance": 2.7757,
+    "avg_fare": 15.4362,
+    "avg_passengers": 1.3796,
+    "avg_trips": 128.77,
+    "total_trips": 94907
+  },
+  "143": {
+    "zone_id": 143,
+    "avg_distance": 2.5672,
+    "avg_fare": 14.512,
+    "avg_passengers": 1.3391,
+    "avg_trips": 44.9,
+    "total_trips": 31786
+  },
+  "144": {
+    "zone_id": 144,
+    "avg_distance": 2.8285,
+    "avg_fare": 16.5314,
+    "avg_passengers": 1.4248,
+    "avg_trips": 32.01,
+    "total_trips": 22342
+  },
+  "145": {
+    "zone_id": 145,
+    "avg_distance": 4.5645,
+    "avg_fare": 36.9009,
+    "avg_passengers": 1.4753,
+    "avg_trips": 1.82,
+    "total_trips": 843
+  },
+  "146": {
+    "zone_id": 146,
+    "avg_distance": 3.0169,
+    "avg_fare": 17.9732,
+    "avg_passengers": 1.2781,
+    "avg_trips": 2.11,
+    "total_trips": 1151
+  },
+  "147": {
+    "zone_id": 147,
+    "avg_distance": 5.5189,
+    "avg_fare": 27.2667,
+    "avg_passengers": 1.1667,
+    "avg_trips": 1.03,
+    "total_trips": 37
+  },
+  "148": {
+    "zone_id": 148,
+    "avg_distance": 3.3866,
+    "avg_fare": 18.3787,
+    "avg_passengers": 1.4033,
+    "avg_trips": 38.8,
+    "total_trips": 28710
+  },
+  "149": {
+    "zone_id": 149,
+    "avg_distance": 10.51,
+    "avg_fare": 37.7927,
+    "avg_passengers": 1.0244,
+    "avg_trips": 1.02,
+    "total_trips": 42
+  },
+  "150": {
+    "zone_id": 150,
+    "avg_distance": 9.2111,
+    "avg_fare": 37.4684,
+    "avg_passengers": 1.4211,
+    "avg_trips": 1.0,
+    "total_trips": 19
+  },
+  "151": {
+    "zone_id": 151,
+    "avg_distance": 2.7441,
+    "avg_fare": 15.3812,
+    "avg_passengers": 1.3461,
+    "avg_trips": 33.65,
+    "total_trips": 23960
+  },
+  "152": {
+    "zone_id": 152,
+    "avg_distance": 3.008,
+    "avg_fare": 16.871,
+    "avg_passengers": 1.3023,
+    "avg_trips": 2.97,
+    "total_trips": 1714
+  },
+  "153": {
+    "zone_id": 153,
+    "avg_distance": 6.2861,
+    "avg_fare": 25.1821,
+    "avg_passengers": 1.0357,
+    "avg_trips": 1.07,
+    "total_trips": 15
+  },
+  "154": {
+    "zone_id": 154,
+    "avg_distance": 8.9226,
+    "avg_fare": 44.3833,
+    "avg_passengers": 1.3333,
+    "avg_trips": 1.1,
+    "total_trips": 23
+  },
+  "155": {
+    "zone_id": 155,
+    "avg_distance": 9.6397,
+    "avg_fare": 41.9856,
+    "avg_passengers": 1.0855,
+    "avg_trips": 1.09,
+    "total_trips": 83
+  },
+  "156": {
+    "zone_id": 156,
+    "avg_distance": 12.57,
+    "avg_fare": 138.1,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.0,
+    "total_trips": 3
+  },
+  "157": {
+    "zone_id": 157,
+    "avg_distance": 6.1183,
+    "avg_fare": 49.8776,
+    "avg_passengers": 1.4053,
+    "avg_trips": 1.19,
+    "total_trips": 201
+  },
+  "158": {
+    "zone_id": 158,
+    "avg_distance": 3.2363,
+    "avg_fare": 17.8471,
+    "avg_passengers": 1.4246,
+    "avg_trips": 32.0,
+    "total_trips": 22593
+  },
+  "159": {
+    "zone_id": 159,
+    "avg_distance": 3.5719,
+    "avg_fare": 21.5608,
+    "avg_passengers": 1.3095,
+    "avg_trips": 1.05,
+    "total_trips": 110
+  },
+  "160": {
+    "zone_id": 160,
+    "avg_distance": 5.5925,
+    "avg_fare": 32.3684,
+    "avg_passengers": 1.1597,
+    "avg_trips": 1.15,
+    "total_trips": 55
+  },
+  "161": {
+    "zone_id": 161,
+    "avg_distance": 3.4207,
+    "avg_fare": 18.7002,
+    "avg_passengers": 1.403,
+    "avg_trips": 173.52,
+    "total_trips": 129101
+  },
+  "162": {
+    "zone_id": 162,
+    "avg_distance": 2.8857,
+    "avg_fare": 16.2987,
+    "avg_passengers": 1.3493,
+    "avg_trips": 135.67,
+    "total_trips": 100806
+  },
+  "163": {
+    "zone_id": 163,
+    "avg_distance": 3.2356,
+    "avg_fare": 17.8377,
+    "avg_passengers": 1.386,
+    "avg_trips": 109.81,
+    "total_trips": 81258
+  },
+  "164": {
+    "zone_id": 164,
+    "avg_distance": 2.8139,
+    "avg_fare": 16.2002,
+    "avg_passengers": 1.4055,
+    "avg_trips": 85.55,
+    "total_trips": 63647
+  },
+  "165": {
+    "zone_id": 165,
+    "avg_distance": 5.8371,
+    "avg_fare": 27.7641,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.25,
+    "total_trips": 99
+  },
+  "166": {
+    "zone_id": 166,
+    "avg_distance": 2.7753,
+    "avg_fare": 16.0919,
+    "avg_passengers": 1.3407,
+    "avg_trips": 17.82,
+    "total_trips": 12435
+  },
+  "167": {
+    "zone_id": 167,
+    "avg_distance": 5.1525,
+    "avg_fare": 26.0521,
+    "avg_passengers": 1.0616,
+    "avg_trips": 1.12,
+    "total_trips": 82
+  },
+  "168": {
+    "zone_id": 168,
+    "avg_distance": 4.3419,
+    "avg_fare": 22.4051,
+    "avg_passengers": 1.3263,
+    "avg_trips": 1.22,
+    "total_trips": 202
+  },
+  "169": {
+    "zone_id": 169,
+    "avg_distance": 6.9589,
+    "avg_fare": 28.6536,
+    "avg_passengers": 1.0625,
+    "avg_trips": 1.04,
+    "total_trips": 58
+  },
+  "170": {
+    "zone_id": 170,
+    "avg_distance": 2.8013,
+    "avg_fare": 16.1816,
+    "avg_passengers": 1.3624,
+    "avg_trips": 112.89,
+    "total_trips": 83992
+  },
+  "171": {
+    "zone_id": 171,
+    "avg_distance": 6.4298,
+    "avg_fare": 28.6133,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.03,
+    "total_trips": 31
+  },
+  "172": {
+    "zone_id": 172,
+    "avg_distance": 8.7,
+    "avg_fare": 48.825,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.0,
+    "total_trips": 4
+  },
+  "173": {
+    "zone_id": 173,
+    "avg_distance": 6.079,
+    "avg_fare": 31.1276,
+    "avg_passengers": 1.4828,
+    "avg_trips": 1.0,
+    "total_trips": 29
+  },
+  "174": {
+    "zone_id": 174,
+    "avg_distance": 6.6649,
+    "avg_fare": 30.3649,
+    "avg_passengers": 1.1493,
+    "avg_trips": 1.09,
+    "total_trips": 73
+  },
+  "175": {
+    "zone_id": 175,
+    "avg_distance": 8.2362,
+    "avg_fare": 33.1233,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.03,
+    "total_trips": 31
+  },
+  "177": {
+    "zone_id": 177,
+    "avg_distance": 5.2279,
+    "avg_fare": 26.2116,
+    "avg_passengers": 1.0296,
+    "avg_trips": 1.21,
+    "total_trips": 163
+  },
+  "178": {
+    "zone_id": 178,
+    "avg_distance": 7.5492,
+    "avg_fare": 35.7462,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.0,
+    "total_trips": 13
+  },
+  "179": {
+    "zone_id": 179,
+    "avg_distance": 3.1215,
+    "avg_fare": 17.9818,
+    "avg_passengers": 1.2319,
+    "avg_trips": 1.38,
+    "total_trips": 440
+  },
+  "180": {
+    "zone_id": 180,
+    "avg_distance": 6.1133,
+    "avg_fare": 46.4092,
+    "avg_passengers": 1.2245,
+    "avg_trips": 1.06,
+    "total_trips": 52
+  },
+  "181": {
+    "zone_id": 181,
+    "avg_distance": 4.3323,
+    "avg_fare": 22.6644,
+    "avg_passengers": 1.4035,
+    "avg_trips": 1.76,
+    "total_trips": 561
+  },
+  "182": {
+    "zone_id": 182,
+    "avg_distance": 6.2168,
+    "avg_fare": 27.1583,
+    "avg_passengers": 1.0417,
+    "avg_trips": 1.08,
+    "total_trips": 78
+  },
+  "183": {
+    "zone_id": 183,
+    "avg_distance": 6.3016,
+    "avg_fare": 34.1947,
+    "avg_passengers": 1.1053,
+    "avg_trips": 1.0,
+    "total_trips": 19
+  },
+  "184": {
+    "zone_id": 184,
+    "avg_distance": 6.99,
+    "avg_fare": 27.5,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.0,
+    "total_trips": 2
+  },
+  "185": {
+    "zone_id": 185,
+    "avg_distance": 5.2018,
+    "avg_fare": 27.1796,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.04,
+    "total_trips": 51
+  },
+  "186": {
+    "zone_id": 186,
+    "avg_distance": 2.5279,
+    "avg_fare": 15.7006,
+    "avg_passengers": 1.3609,
+    "avg_trips": 140.88,
+    "total_trips": 104812
+  },
+  "188": {
+    "zone_id": 188,
+    "avg_distance": 4.6678,
+    "avg_fare": 25.2585,
+    "avg_passengers": 1.067,
+    "avg_trips": 1.26,
+    "total_trips": 220
+  },
+  "189": {
+    "zone_id": 189,
+    "avg_distance": 4.0973,
+    "avg_fare": 21.3071,
+    "avg_passengers": 1.3413,
+    "avg_trips": 1.18,
+    "total_trips": 172
+  },
+  "190": {
+    "zone_id": 190,
+    "avg_distance": 3.6075,
+    "avg_fare": 21.9896,
+    "avg_passengers": 1.5833,
+    "avg_trips": 1.08,
+    "total_trips": 26
+  },
+  "191": {
+    "zone_id": 191,
+    "avg_distance": 9.5661,
+    "avg_fare": 38.9375,
+    "avg_passengers": 1.0265,
+    "avg_trips": 1.28,
+    "total_trips": 145
+  },
+  "192": {
+    "zone_id": 192,
+    "avg_distance": 4.1711,
+    "avg_fare": 23.2037,
+    "avg_passengers": 1.1111,
+    "avg_trips": 1.0,
+    "total_trips": 27
+  },
+  "193": {
+    "zone_id": 193,
+    "avg_distance": 3.8126,
+    "avg_fare": 21.2448,
+    "avg_passengers": 1.2766,
+    "avg_trips": 1.44,
+    "total_trips": 352
+  },
+  "194": {
+    "zone_id": 194,
+    "avg_distance": 5.4999,
+    "avg_fare": 57.0647,
+    "avg_passengers": 1.2721,
+    "avg_trips": 1.06,
+    "total_trips": 72
+  },
+  "195": {
+    "zone_id": 195,
+    "avg_distance": 7.5347,
+    "avg_fare": 35.6779,
+    "avg_passengers": 1.329,
+    "avg_trips": 1.38,
+    "total_trips": 80
+  },
+  "196": {
+    "zone_id": 196,
+    "avg_distance": 6.5101,
+    "avg_fare": 46.4135,
+    "avg_passengers": 1.343,
+    "avg_trips": 1.13,
+    "total_trips": 156
+  },
+  "197": {
+    "zone_id": 197,
+    "avg_distance": 7.9259,
+    "avg_fare": 43.6767,
+    "avg_passengers": 1.1952,
+    "avg_trips": 1.61,
+    "total_trips": 258
+  },
+  "198": {
+    "zone_id": 198,
+    "avg_distance": 5.4267,
+    "avg_fare": 25.9007,
+    "avg_passengers": 1.2391,
+    "avg_trips": 1.13,
+    "total_trips": 52
+  },
+  "199": {
+    "zone_id": 199,
+    "avg_distance": 1.62,
+    "avg_fare": 10.0,
+    "avg_passengers": 1.5,
+    "avg_trips": 1.0,
+    "total_trips": 2
+  },
+  "200": {
+    "zone_id": 200,
+    "avg_distance": 11.7333,
+    "avg_fare": 43.8564,
+    "avg_passengers": 1.1,
+    "avg_trips": 1.05,
+    "total_trips": 58
+  },
+  "201": {
+    "zone_id": 201,
+    "avg_distance": 13.6871,
+    "avg_fare": 50.6097,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.03,
+    "total_trips": 32
+  },
+  "202": {
+    "zone_id": 202,
+    "avg_distance": 4.4208,
+    "avg_fare": 24.1943,
+    "avg_passengers": 1.5429,
+    "avg_trips": 1.04,
+    "total_trips": 73
+  },
+  "203": {
+    "zone_id": 203,
+    "avg_distance": 9.4475,
+    "avg_fare": 43.2555,
+    "avg_passengers": 1.14,
+    "avg_trips": 1.08,
+    "total_trips": 108
+  },
+  "204": {
+    "zone_id": 204,
+    "avg_distance": 11.42,
+    "avg_fare": 35.1,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.0,
+    "total_trips": 2
+  },
+  "205": {
+    "zone_id": 205,
+    "avg_distance": 7.5434,
+    "avg_fare": 33.2637,
+    "avg_passengers": 1.05,
+    "avg_trips": 1.24,
+    "total_trips": 174
+  },
+  "206": {
+    "zone_id": 206,
+    "avg_distance": 14.9922,
+    "avg_fare": 49.6111,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.0,
+    "total_trips": 9
+  },
+  "207": {
+    "zone_id": 207,
+    "avg_distance": 5.1495,
+    "avg_fare": 32.191,
+    "avg_passengers": 1.3077,
+    "avg_trips": 1.05,
+    "total_trips": 41
+  },
+  "208": {
+    "zone_id": 208,
+    "avg_distance": 6.0454,
+    "avg_fare": 33.2582,
+    "avg_passengers": 1.0636,
+    "avg_trips": 1.09,
+    "total_trips": 60
+  },
+  "209": {
+    "zone_id": 209,
+    "avg_distance": 4.4791,
+    "avg_fare": 22.3461,
+    "avg_passengers": 1.4068,
+    "avg_trips": 6.46,
+    "total_trips": 4033
+  },
+  "210": {
+    "zone_id": 210,
+    "avg_distance": 11.8179,
+    "avg_fare": 40.3843,
+    "avg_passengers": 1.0349,
+    "avg_trips": 1.08,
+    "total_trips": 93
+  },
+  "211": {
+    "zone_id": 211,
+    "avg_distance": 2.9192,
+    "avg_fare": 16.483,
+    "avg_passengers": 1.3703,
+    "avg_trips": 27.21,
+    "total_trips": 19349
+  },
+  "212": {
+    "zone_id": 212,
+    "avg_distance": 6.2767,
+    "avg_fare": 27.1389,
+    "avg_passengers": 1.0556,
+    "avg_trips": 1.0,
+    "total_trips": 36
+  },
+  "213": {
+    "zone_id": 213,
+    "avg_distance": 7.6197,
+    "avg_fare": 31.6425,
+    "avg_passengers": 1.084,
+    "avg_trips": 1.21,
+    "total_trips": 151
+  },
+  "214": {
+    "zone_id": 214,
+    "avg_distance": 16.3833,
+    "avg_fare": 54.5867,
+    "avg_passengers": 1.0667,
+    "avg_trips": 1.0,
+    "total_trips": 15
+  },
+  "215": {
+    "zone_id": 215,
+    "avg_distance": 12.5395,
+    "avg_fare": 62.5913,
+    "avg_passengers": 1.2992,
+    "avg_trips": 1.75,
+    "total_trips": 693
+  },
+  "216": {
+    "zone_id": 216,
+    "avg_distance": 8.7941,
+    "avg_fare": 56.2818,
+    "avg_passengers": 1.3905,
+    "avg_trips": 1.52,
+    "total_trips": 474
+  },
+  "217": {
+    "zone_id": 217,
+    "avg_distance": 3.9346,
+    "avg_fare": 24.4069,
+    "avg_passengers": 1.2437,
+    "avg_trips": 1.11,
+    "total_trips": 89
+  },
+  "218": {
+    "zone_id": 218,
+    "avg_distance": 7.07,
+    "avg_fare": 31.9433,
+    "avg_passengers": 1.0614,
+    "avg_trips": 1.34,
+    "total_trips": 153
+  },
+  "219": {
+    "zone_id": 219,
+    "avg_distance": 13.2851,
+    "avg_fare": 62.5629,
+    "avg_passengers": 1.3322,
+    "avg_trips": 1.25,
+    "total_trips": 277
+  },
+  "220": {
+    "zone_id": 220,
+    "avg_distance": 6.9436,
+    "avg_fare": 28.8277,
+    "avg_passengers": 1.2285,
+    "avg_trips": 1.07,
+    "total_trips": 95
+  },
+  "221": {
+    "zone_id": 221,
+    "avg_distance": 3.7833,
+    "avg_fare": 58.6667,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.0,
+    "total_trips": 3
+  },
+  "222": {
+    "zone_id": 222,
+    "avg_distance": 9.2653,
+    "avg_fare": 37.935,
+    "avg_passengers": 1.1161,
+    "avg_trips": 1.09,
+    "total_trips": 133
+  },
+  "223": {
+    "zone_id": 223,
+    "avg_distance": 5.8147,
+    "avg_fare": 38.5397,
+    "avg_passengers": 1.358,
+    "avg_trips": 1.42,
+    "total_trips": 460
+  },
+  "224": {
+    "zone_id": 224,
+    "avg_distance": 2.5694,
+    "avg_fare": 15.2098,
+    "avg_passengers": 1.3163,
+    "avg_trips": 5.8,
+    "total_trips": 3718
+  },
+  "225": {
+    "zone_id": 225,
+    "avg_distance": 4.1027,
+    "avg_fare": 22.7883,
+    "avg_passengers": 1.1122,
+    "avg_trips": 1.13,
+    "total_trips": 170
+  },
+  "226": {
+    "zone_id": 226,
+    "avg_distance": 4.6382,
+    "avg_fare": 30.912,
+    "avg_passengers": 1.3549,
+    "avg_trips": 2.79,
+    "total_trips": 1744
+  },
+  "227": {
+    "zone_id": 227,
+    "avg_distance": 7.507,
+    "avg_fare": 31.2242,
+    "avg_passengers": 1.303,
+    "avg_trips": 1.03,
+    "total_trips": 34
+  },
+  "228": {
+    "zone_id": 228,
+    "avg_distance": 5.5072,
+    "avg_fare": 28.6898,
+    "avg_passengers": 1.0909,
+    "avg_trips": 1.08,
+    "total_trips": 95
+  },
+  "229": {
+    "zone_id": 229,
+    "avg_distance": 2.4682,
+    "avg_fare": 14.183,
+    "avg_passengers": 1.3524,
+    "avg_trips": 79.45,
+    "total_trips": 59111
+  },
+  "230": {
+    "zone_id": 230,
+    "avg_distance": 3.7125,
+    "avg_fare": 19.6756,
+    "avg_passengers": 1.4741,
+    "avg_trips": 126.81,
+    "total_trips": 94222
+  },
+  "231": {
+    "zone_id": 231,
+    "avg_distance": 3.4826,
+    "avg_fare": 18.5656,
+    "avg_passengers": 1.3893,
+    "avg_trips": 49.9,
+    "total_trips": 36629
+  },
+  "232": {
+    "zone_id": 232,
+    "avg_distance": 3.3246,
+    "avg_fare": 19.7275,
+    "avg_passengers": 1.4446,
+    "avg_trips": 4.32,
+    "total_trips": 2627
+  },
+  "233": {
+    "zone_id": 233,
+    "avg_distance": 3.1555,
+    "avg_fare": 17.2249,
+    "avg_passengers": 1.3628,
+    "avg_trips": 48.32,
+    "total_trips": 35759
+  },
+  "234": {
+    "zone_id": 234,
+    "avg_distance": 2.6132,
+    "avg_fare": 15.2499,
+    "avg_passengers": 1.3501,
+    "avg_trips": 104.28,
+    "total_trips": 77270
+  },
+  "235": {
+    "zone_id": 235,
+    "avg_distance": 12.4448,
+    "avg_fare": 41.7838,
+    "avg_passengers": 1.052,
+    "avg_trips": 1.14,
+    "total_trips": 142
+  },
+  "236": {
+    "zone_id": 236,
+    "avg_distance": 2.4999,
+    "avg_fare": 14.333,
+    "avg_passengers": 1.3501,
+    "avg_trips": 178.81,
+    "total_trips": 130887
+  },
+  "237": {
+    "zone_id": 237,
+    "avg_distance": 2.2128,
+    "avg_fare": 13.2432,
+    "avg_passengers": 1.354,
+    "avg_trips": 191.46,
+    "total_trips": 141109
+  },
+  "238": {
+    "zone_id": 238,
+    "avg_distance": 2.7378,
+    "avg_fare": 15.2437,
+    "avg_passengers": 1.3563,
+    "avg_trips": 79.79,
+    "total_trips": 58725
+  },
+  "239": {
+    "zone_id": 239,
+    "avg_distance": 2.6726,
+    "avg_fare": 14.9074,
+    "avg_passengers": 1.3775,
+    "avg_trips": 110.12,
+    "total_trips": 81602
+  },
+  "240": {
+    "zone_id": 240,
+    "avg_distance": 5.0683,
+    "avg_fare": 33.6833,
+    "avg_passengers": 1.6667,
+    "avg_trips": 1.0,
+    "total_trips": 6
+  },
+  "241": {
+    "zone_id": 241,
+    "avg_distance": 7.7578,
+    "avg_fare": 33.4104,
+    "avg_passengers": 1.0943,
+    "avg_trips": 1.08,
+    "total_trips": 57
+  },
+  "242": {
+    "zone_id": 242,
+    "avg_distance": 5.9356,
+    "avg_fare": 27.4845,
+    "avg_passengers": 1.02,
+    "avg_trips": 1.35,
+    "total_trips": 135
+  },
+  "243": {
+    "zone_id": 243,
+    "avg_distance": 5.2132,
+    "avg_fare": 25.5192,
+    "avg_passengers": 1.3674,
+    "avg_trips": 1.26,
+    "total_trips": 232
+  },
+  "244": {
+    "zone_id": 244,
+    "avg_distance": 4.3986,
+    "avg_fare": 21.988,
+    "avg_passengers": 1.332,
+    "avg_trips": 2.89,
+    "total_trips": 1534
+  },
+  "245": {
+    "zone_id": 245,
+    "avg_distance": 10.26,
+    "avg_fare": 4.75,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.0,
+    "total_trips": 2
+  },
+  "246": {
+    "zone_id": 246,
+    "avg_distance": 2.5987,
+    "avg_fare": 15.5881,
+    "avg_passengers": 1.4226,
+    "avg_trips": 59.64,
+    "total_trips": 43715
+  },
+  "247": {
+    "zone_id": 247,
+    "avg_distance": 5.8654,
+    "avg_fare": 25.2406,
+    "avg_passengers": 1.1815,
+    "avg_trips": 1.25,
+    "total_trips": 182
+  },
+  "248": {
+    "zone_id": 248,
+    "avg_distance": 6.2441,
+    "avg_fare": 26.7969,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.03,
+    "total_trips": 30
+  },
+  "249": {
+    "zone_id": 249,
+    "avg_distance": 2.6011,
+    "avg_fare": 15.186,
+    "avg_passengers": 1.358,
+    "avg_trips": 86.06,
+    "total_trips": 64025
+  },
+  "250": {
+    "zone_id": 250,
+    "avg_distance": 5.3331,
+    "avg_fare": 25.5676,
+    "avg_passengers": 1.1481,
+    "avg_trips": 1.02,
+    "total_trips": 55
+  },
+  "251": {
+    "zone_id": 251,
+    "avg_distance": 7.09,
+    "avg_fare": 19.7,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.0,
+    "total_trips": 2
+  },
+  "252": {
+    "zone_id": 252,
+    "avg_distance": 10.4694,
+    "avg_fare": 67.7875,
+    "avg_passengers": 1.0625,
+    "avg_trips": 1.0,
+    "total_trips": 16
+  },
+  "253": {
+    "zone_id": 253,
+    "avg_distance": 6.2512,
+    "avg_fare": 49.95,
+    "avg_passengers": 1.625,
+    "avg_trips": 1.0,
+    "total_trips": 8
+  },
+  "254": {
+    "zone_id": 254,
+    "avg_distance": 9.3052,
+    "avg_fare": 36.4851,
+    "avg_passengers": 1.0686,
+    "avg_trips": 1.17,
+    "total_trips": 119
+  },
+  "255": {
+    "zone_id": 255,
+    "avg_distance": 3.8672,
+    "avg_fare": 21.7062,
+    "avg_passengers": 1.4217,
+    "avg_trips": 3.49,
+    "total_trips": 894
+  },
+  "256": {
+    "zone_id": 256,
+    "avg_distance": 4.1037,
+    "avg_fare": 24.0251,
+    "avg_passengers": 1.4049,
+    "avg_trips": 2.47,
+    "total_trips": 725
+  },
+  "257": {
+    "zone_id": 257,
+    "avg_distance": 6.8333,
+    "avg_fare": 30.9371,
+    "avg_passengers": 1.0714,
+    "avg_trips": 1.09,
+    "total_trips": 38
+  },
+  "258": {
+    "zone_id": 258,
+    "avg_distance": 5.2629,
+    "avg_fare": 26.2922,
+    "avg_passengers": 1.1773,
+    "avg_trips": 1.13,
+    "total_trips": 53
+  },
+  "259": {
+    "zone_id": 259,
+    "avg_distance": 10.9712,
+    "avg_fare": 38.818,
+    "avg_passengers": 1.0,
+    "avg_trips": 1.1,
+    "total_trips": 55
+  },
+  "260": {
+    "zone_id": 260,
+    "avg_distance": 3.9651,
+    "avg_fare": 29.2982,
+    "avg_passengers": 1.3865,
+    "avg_trips": 1.47,
+    "total_trips": 504
+  },
+  "261": {
+    "zone_id": 261,
+    "avg_distance": 4.955,
+    "avg_fare": 24.3546,
+    "avg_passengers": 1.5054,
+    "avg_trips": 17.39,
+    "total_trips": 12104
+  },
+  "262": {
+    "zone_id": 262,
+    "avg_distance": 2.7958,
+    "avg_fare": 15.223,
+    "avg_passengers": 1.3429,
+    "avg_trips": 55.8,
+    "total_trips": 40067
+  },
+  "263": {
+    "zone_id": 263,
+    "avg_distance": 2.5626,
+    "avg_fare": 14.1596,
+    "avg_passengers": 1.3454,
+    "avg_trips": 83.68,
+    "total_trips": 62256
+  }
+}
