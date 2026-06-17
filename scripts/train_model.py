@@ -2,7 +2,7 @@
 NYC Taksi Talep Tahmini - Model Eğitim Scripti
 ================================================
 Ankara Üniversitesi - 3522 Bulut Bilişim Dersi
-Hazırlayan: Mehmet AKALIN
+Hazırlayan: Mehmet Tarik Ozcan (222904436)
 
 Bu script:
 1. NYC TLC'den Ocak 2023 sarı taksi verisini indirir
