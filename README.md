@@ -2,7 +2,7 @@
 
 Bu proje, New York City (NYC) sarı taksi verilerini kullanarak bölge, gün ve saat bazlı taksi talebini tahmin eden uçtan uca bir Makine Öğrenmesi (Machine Learning) web uygulamasıdır. Ankara Üniversitesi Bilgisayar Mühendisliği 3522 Bulut Bilişim Dersi için geliştirilmiştir.
 
-![NYC Taxi Prediction](https://raw.githubusercontent.com/akalnmehmet/taxi-demand-prediction/main/web/public/favicon.ico) *(Eğer önizleme görseli eklerseniz buraya koyabilirsiniz)*
+![NYC Taxi Prediction](https://raw.githubusercontent.com/mtarikozcan/nyc-taxi/main/web/public/favicon.ico) *(Eğer önizleme görseli eklerseniz buraya koyabilirsiniz)*
 
 ## 🌟 Özellikler
 
@@ -34,7 +34,7 @@ Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
 
 ### 1. Depoyu Klonlayın
 ```bash
-git clone https://github.com/akalnmehmet/taxi-demand-prediction.git
+git clone https://github.com/mtarikozcan/nyc-taxi.git
 cd taxi-demand-prediction
 ```
 
@@ -102,7 +102,8 @@ taxi-demand-prediction/
 ```
 
 ## 👨‍💻 Hazırlayan
-**Mehmet AKALIN**
+**Mehmet Tarik Ozcan**
+Öğrenci No: 222904436
 Ankara Üniversitesi · Bilgisayar Mühendisliği
 3522 Bulut Bilişim Dersi Kapsamında Geliştirilmiştir.
 
